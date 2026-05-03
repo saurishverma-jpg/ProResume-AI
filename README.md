@@ -171,7 +171,7 @@ Interactive analytics showing resume trends, score distributions, and AI model u
 docker build -t proresume-ai .
 docker run -p 8501:8501 --env-file .env proresume-ai
 ```
-DEMO : https://proresume-ai.onrender.com
+Live At : https://proresume-ai.onrender.com
 
 ---
 
