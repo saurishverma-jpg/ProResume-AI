@@ -3,8 +3,18 @@ import streamlit as st
 from dotenv import load_dotenv
 import google.generativeai as genai
 import pdfplumber
-from pdf2image import convert_from_path
-import pytesseract
+try:
+    from pdf2image import convert_from_path
+    PDF2IMAGE_AVAILABLE = True
+except ImportError:
+    PDF2IMAGE_AVAILABLE = False
+    convert_from_path = None
+try:
+    import pytesseract
+    PYTESSERACT_AVAILABLE = True
+except ImportError:
+    PYTESSERACT_AVAILABLE = False
+    pytesseract = None
 import tempfile
 import requests
 import json
