@@ -785,11 +785,8 @@ class ResumeApp:
         if st.button("Generate Resume 📄", type="primary"):
             print("Validating form data...")
             print(f"Session state form data: {st.session_state.form_data}")
-            print(
-    f"Email input value: {
-        st.session_state.get(
-            'email_input',
-             '')}")
+            email_val = st.session_state.get('email_input', '')
+            print(f"Email input value: {email_val}")
 
             # Get the current values from form
             current_name = st.session_state.form_data['personal_info']['full_name'].strip(
