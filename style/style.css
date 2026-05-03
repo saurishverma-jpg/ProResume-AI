@@ -1,0 +1,842 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ============================================================
+   BLACK & ORANGE MONOCHROMATIC — BOXY DESIGN SYSTEM
+   ============================================================ */
+
+:root {
+    --orange: #FF6B00;
+    --orange-dark: #CC5500;
+    --orange-light: #FF8C33;
+    --orange-muted: rgba(255, 107, 0, 0.15);
+    --orange-subtle: rgba(255, 107, 0, 0.08);
+
+    --bg-base: #0a0a0a;
+    --bg-surface: #111111;
+    --bg-elevated: #1a1a1a;
+    --bg-input: #1e1e1e;
+    --bg-hover: #222222;
+
+    --border: #2a2a2a;
+    --border-hover: #3a3a3a;
+    --border-active: #FF6B00;
+
+    --text-primary: #f0f0f0;
+    --text-secondary: #999999;
+    --text-muted: #666666;
+
+    --success: #22c55e;
+    --warning: #FF6B00;
+    --error: #ef4444;
+
+    --radius: 4px;
+    --radius-lg: 6px;
+}
+
+/* ============================================================
+   GLOBAL
+   ============================================================ */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-base) !important;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.stApp {
+    background: var(--bg-base) !important;
+}
+
+.main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+}
+
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+section[data-testid="stSidebar"] {
+    background: var(--bg-surface) !important;
+    border-right: 1px solid var(--border) !important;
+}
+
+section[data-testid="stSidebar"] .stSelectbox label,
+section[data-testid="stSidebar"] .stRadio label {
+    color: var(--text-primary) !important;
+}
+
+.css-1d391kg {
+    background: var(--bg-surface);
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary) !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+}
+
+h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+    border-bottom: 3px solid var(--orange);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--orange) !important;
+    -webkit-text-fill-color: var(--orange) !important;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p,
+span,
+div,
+li {
+    color: var(--text-primary);
+}
+
+a {
+    color: var(--orange) !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--orange-light) !important;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.stButton>button {
+    background: var(--orange) !important;
+    color: #000000 !important;
+    border: none !important;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius) !important;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    transition: background 0.2s ease, transform 0.15s ease;
+    box-shadow: none !important;
+}
+
+.stButton>button:hover {
+    background: var(--orange-dark) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.25) !important;
+}
+
+.stButton>button:active {
+    transform: translateY(0);
+}
+
+/* Primary button variant */
+button[kind="primary"],
+.stButton>button[kind="primary"] {
+    background: var(--orange) !important;
+    color: #000000 !important;
+}
+
+/* Secondary button variant */
+button[kind="secondary"],
+.stButton>button[kind="secondary"] {
+    background: transparent !important;
+    color: var(--orange) !important;
+    border: 1px solid var(--orange) !important;
+}
+
+button[kind="secondary"]:hover {
+    background: var(--orange-muted) !important;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+
+.stCard,
+.card {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: none;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.stCard:hover,
+.card:hover {
+    border-color: var(--orange);
+    transform: none;
+    box-shadow: none;
+}
+
+.card::before {
+    display: none;
+}
+
+.feature-card {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 0.75rem 0;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--orange);
+    transform: none;
+    box-shadow: none;
+}
+
+/* ============================================================
+   GLASS / ELEVATED CARDS
+   ============================================================ */
+
+.glass-card {
+    background: var(--bg-elevated);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+/* ============================================================
+   INPUT FIELDS
+   ============================================================ */
+
+.stTextInput>div>div,
+.stTextArea textarea,
+.stSelectbox>div>div {
+    background: var(--bg-input) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+    border-radius: var(--radius) !important;
+    padding: 0;
+}
+
+.stTextInput>div>div:focus-within,
+.stTextArea textarea:focus,
+.stSelectbox>div>div:focus-within {
+    border-color: var(--orange) !important;
+    box-shadow: 0 0 0 1px var(--orange) !important;
+}
+
+div[data-baseweb="base-input"] {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+div[data-baseweb="input"] {
+    position: relative !important;
+    background: var(--bg-input) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    margin: 8px 0 !important;
+    padding: 0 !important;
+}
+
+div[data-baseweb="input"] input {
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-primary) !important;
+    font-size: 14px !important;
+    padding: 12px !important;
+    height: 45px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+}
+
+div[data-baseweb="input"]:focus,
+div[data-baseweb="input"] input:focus,
+div[data-baseweb="input"] div:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+div[data-baseweb="input"]:focus-within {
+    border-color: var(--orange) !important;
+    box-shadow: 0 0 0 1px var(--orange) !important;
+}
+
+div[data-baseweb="input"] button {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: none !important;
+    border: none !important;
+    padding: 4px !important;
+    color: var(--text-secondary) !important;
+    cursor: pointer !important;
+    z-index: 2 !important;
+    height: auto !important;
+    min-height: auto !important;
+    width: auto !important;
+    min-width: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+div[data-baseweb="input"] button:hover,
+div[data-baseweb="input"] button:focus {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--orange) !important;
+}
+
+div[data-baseweb="input"]>div {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* ============================================================
+   FILE UPLOADER
+   ============================================================ */
+
+.stFileUploader {
+    background: var(--bg-surface);
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+}
+
+.stFileUploader:hover {
+    border-color: var(--orange);
+}
+
+/* ============================================================
+   EXPANDER
+   ============================================================ */
+
+.stExpander {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin: 10px 0;
+    padding: 15px;
+}
+
+.stExpander .stButton>button {
+    width: 100%;
+    margin: 10px 0 5px 0;
+    background: var(--orange) !important;
+    color: #000 !important;
+    border: none !important;
+    padding: 8px 16px;
+    border-radius: var(--radius) !important;
+    cursor: pointer;
+    font-weight: 500;
+    height: 45px;
+}
+
+.streamlit-expanderHeader {
+    background: var(--bg-elevated);
+    border: none;
+    border-radius: var(--radius);
+    color: var(--text-primary) !important;
+}
+
+/* ============================================================
+   METRICS
+   ============================================================ */
+
+.stMetric {
+    background: var(--bg-surface);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--orange);
+}
+
+.stMetric:hover {
+    transform: none;
+}
+
+.metric-card {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin: 0.75rem 0;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--orange);
+    transition: border-color 0.2s ease;
+}
+
+.metric-card:hover {
+    border-color: var(--orange);
+    transform: none;
+    box-shadow: none;
+}
+
+/* ============================================================
+   PROGRESS BARS
+   ============================================================ */
+
+.stProgress>div>div {
+    background-color: var(--orange) !important;
+}
+
+.progress-container {
+    background: var(--bg-elevated);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--orange);
+    border-radius: var(--radius);
+    transition: width 0.3s ease;
+}
+
+/* ============================================================
+   TABS
+   ============================================================ */
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 0;
+    color: var(--text-secondary);
+    border-bottom: 2px solid transparent;
+    padding: 0.75rem 1.25rem;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--orange) !important;
+    border-bottom-color: var(--orange) !important;
+    background: transparent;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+.stDataFrame {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+/* ============================================================
+   PLOTLY CHARTS
+   ============================================================ */
+
+.js-plotly-plot {
+    background: var(--bg-surface) !important;
+}
+
+/* ============================================================
+   SKILL TAGS
+   ============================================================ */
+
+.skill-tag {
+    display: inline-block;
+    background: var(--orange-muted);
+    color: var(--orange);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius);
+    margin: 0.2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 107, 0, 0.3);
+}
+
+.skill-tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+/* ============================================================
+   ROLE CARD
+   ============================================================ */
+
+.role-card {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+}
+
+.role-card:hover {
+    border-color: var(--orange);
+    transform: none;
+    box-shadow: none;
+}
+
+.role-card h3 {
+    color: var(--orange) !important;
+    -webkit-text-fill-color: var(--orange) !important;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   TEMPLATE CARDS
+   ============================================================ */
+
+.template-preview {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    background: var(--bg-surface);
+}
+
+.template-preview:hover {
+    border-color: var(--orange);
+    box-shadow: none;
+}
+
+.template-preview.selected {
+    border-color: var(--orange);
+    background: var(--orange-subtle);
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 0.75rem;
+}
+
+.template-card {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.template-card:hover {
+    border-color: var(--orange);
+    transform: none;
+    box-shadow: none;
+}
+
+.template-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--orange);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.template-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* ============================================================
+   RESUME TEMPLATE
+   ============================================================ */
+
+.resume-template {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin: 0.5rem;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+}
+
+.resume-template:hover {
+    border-color: var(--orange);
+    transform: none;
+}
+
+/* ============================================================
+   ANALYSIS SECTION
+   ============================================================ */
+
+.analysis-section {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+/* ============================================================
+   FEEDBACK
+   ============================================================ */
+
+.feedback-container {
+    background: var(--bg-surface);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.feedback-card {
+    background: var(--bg-elevated);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin: 0.75rem 0;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s ease;
+}
+
+.feedback-card:hover {
+    border-color: var(--orange);
+    transform: none;
+}
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+
+.about-container {
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.about-container::before {
+    display: none;
+}
+
+.about-section {
+    position: relative;
+    padding: 2rem;
+    background: var(--bg-surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.about-section::before {
+    display: none;
+}
+
+/* ============================================================
+   LOADING / SPINNER
+   ============================================================ */
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--border);
+    border-radius: 50%;
+    border-top-color: var(--orange);
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+/* ============================================================
+   TOOLTIP
+   ============================================================ */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.4rem 0.8rem;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* ============================================================
+   NOTIFICATION
+   ============================================================ */
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--orange);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================================
+   ANIMATIONS (subtle, no gradient)
+   ============================================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* ============================================================
+   MODERN BUTTON (custom class)
+   ============================================================ */
+
+.modern-button {
+    background: var(--orange);
+    color: #000;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+
+.modern-button:hover {
+    background: var(--orange-dark);
+}
+
+.modern-button::after {
+    display: none;
+}
+
+/* ============================================================
+   MODERN INPUT (custom class)
+   ============================================================ */
+
+.modern-input {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease;
+}
+
+.modern-input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 1px var(--orange);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .main {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .template-grid {
+        grid-template-columns: 1fr;
+    }
+}
